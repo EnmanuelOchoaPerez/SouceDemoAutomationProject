@@ -2,7 +2,7 @@
 <suite name="MyTestSuite">
     <test name="PracticeTest">
         <classes>
-            <class name="com.globant.HomeTest"/>
+            <class name="com.globant.ShopTest"/>
         </classes>
     </test>
 </suite>
