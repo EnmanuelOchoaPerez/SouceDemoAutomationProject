@@ -5,14 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Random;
-
 /**
  * Hello world!
  */
 public class Home {
     private WebDriver driver;
-    public static final String[] users = new String[]{"standard_user", "locked_out_user","problem_user","performance_glitch_user","error_user","visual_user"};
+    public static final String user = "standard_user";
     public static final String pass = "secret_sauce";
 
     @FindBy(className = "login_logo")
@@ -32,8 +30,7 @@ public class Home {
         PageFactory.initElements(d, this);
     }
     public void logging(){
-        Random random = new Random();
-        loginUser.sendKeys(users[random.nextInt(users.length)]);
+        loginUser.sendKeys(user);
         loginPass.sendKeys(pass);
         loginButton.click();
 

@@ -2,25 +2,14 @@ package com.globant;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
-
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
 import java.time.Duration;
-import java.util.Random;
 
-import static com.globant.Home.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-
-/**
- * Unit test for simple Home.
- */
-public class ShopTest {
+public class RemoveTest {
 
     public static final Logger log = Logger.getLogger(ShopTest.class);
     private WebDriver driver = new ChromeDriver();
@@ -37,24 +26,14 @@ public class ShopTest {
     }
 
     @Test
-    public void Shop() {
-        st.getRandomLink().click();
-        if (st.itemCount() == 1){
+    public void Remove() {
+        for(int i = 0; i<= 2; i++){p
+            st.getRandomLink().click();
+            log.info(st.itemCount());
+        }
+        if (st.itemCount() == 3){
             st.goToCar();
-            sc.checkOut();
+            sc.clearCart();
         }
     }
-
-
-    //@AfterClass
-    //public void tearDown() {
-    //    if (driver != null) {
-    //        driver.quit();
-    //    }
-    //}
-
-    //@Test
-    //public void shouldAnswerWithTrue() {
-    //    assertTrue(true);
-    //}
 }
