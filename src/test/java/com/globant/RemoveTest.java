@@ -13,10 +13,9 @@ public class RemoveTest {
 
     public static final Logger log = Logger.getLogger(ShopTest.class);
     private WebDriver driver = new ChromeDriver();
-    public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    Store st = new Store(driver);
-    Home hm = new Home(driver);
-    ShopCar sc = new ShopCar(driver);
+    private Store st = new Store(driver);
+    private Home hm = new Home(driver);
+    private ShopCar sc = new ShopCar(driver);
 
 
     @BeforeClass
@@ -27,7 +26,7 @@ public class RemoveTest {
 
     @Test
     public void Remove() {
-        for(int i = 0; i<= 2; i++){p
+        for(int i = 0; i<= 2; i++){
             st.getRandomLink().click();
             log.info(st.itemCount());
         }

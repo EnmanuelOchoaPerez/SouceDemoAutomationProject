@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.Random;
 
 import static com.globant.Home.*;
+import static com.globant.ShoppEnd.ty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -28,6 +29,9 @@ public class ShopTest {
     Store st = new Store(driver);
     Home hm = new Home(driver);
     ShopCar sc = new ShopCar(driver);
+    CheckOut1 co1 = new CheckOut1(driver);
+    CheckOut2 co2 = new CheckOut2(driver);
+    ShoppEnd se = new ShoppEnd(driver);
 
 
     @BeforeClass
@@ -42,6 +46,9 @@ public class ShopTest {
         if (st.itemCount() == 1){
             st.goToCar();
             sc.checkOut();
+            co1.fillInfo();
+            co2.finishing();
+            wait.until(ExpectedConditions.visibilityOf(ty));
         }
     }
 
